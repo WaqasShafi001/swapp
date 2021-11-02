@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:swapp/Appcolors.dart/Appcolors.dart';
-import 'package:swapp/Screens/Signup.dart';
+import 'package:swapp/Screens/socialSignup.dart';
 
 // ignore_for_file: prefer_const_constructors, file_names, prefer_const_literals_to_create_immutables
 
@@ -36,44 +36,43 @@ class _SignInScreenState extends State<SignInScreen> {
                 height: height * 0.010,
               ),
               Center(child: Image.asset('assets/profile.png')),
-              Text('Please select your avatar'),
+              Text('Please select your avatar', style: TextStyle(fontSize: 15)),
               SizedBox(
-                height: height * 0.020,
+                height: height * 0.02,
               ),
               Container(
-                height: height * 0.12,
+                height: height * 0.14,
                 width: width,
-                color: AppColors.lightContainer,
+                color: AppColors.lightGreyColor,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset('assets/profileman.png'),
                     SizedBox(
-                      width: 20,
+                      width: 30,
                     ),
                     Image.asset('assets/profilefemal.png'),
                   ],
                 ),
               ),
               SizedBox(
-                height: height * 0.020,
+                height: height * 0.025,
               ),
               Container(
                 height: height * 0.060,
-                width: width * 0.60,
+                width: width * 0.65,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                          // offset: Offset(4, 4),
-                          color: Colors.black.withOpacity(0.20),
-                          blurRadius: 4),
-                    ]),
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black.withOpacity(0.20),
+                        blurRadius: 15,
+                        spreadRadius: 2),
+                  ],
+                ),
                 child: TextFormField(
-                 // textAlign: TextAlign.center,
-                  autofocus: true,
                   decoration: InputDecoration(
                       hintText: 'Type username here',
                       fillColor: Colors.white,
@@ -86,29 +85,43 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
               SizedBox(
-                height: height*0.025,
+                height: height * 0.028,
               ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Get.to(SignupScreen());
                 },
-                child: 
-                Container(
-                  height: height*0.055,
-                  width: width*0.42,
+                child: Container(
+                  height: height * 0.06,
+                  width: width * 0.42,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColors.linearBlue,
+                    gradient: LinearGradient(
+                      colors: [
+                        AppColors.cianColor,
+                        AppColors.purpleColor,
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.15),
-                        blurRadius: 4
-                      ),
-                      
-                    ]
+                          offset: Offset(5, 5),
+                          color: Colors.black.withOpacity(0.20),
+                          blurRadius: 15,
+                          spreadRadius: 2),
+                    ],
                   ),
-                  child: Center(child: Text('Save and Sign Up',
-                  style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)),
+                  child: Center(
+                    child: Text(
+                      'Save and Sign Up',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
                 ),
               )
             ],

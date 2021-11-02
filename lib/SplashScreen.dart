@@ -8,6 +8,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:swapp/IntroScreen/IntroScreen1.dart';
 import 'package:swapp/widgets/gradientContainer.dart';
 import 'package:get/get.dart';
+
+import 'IntroScreen/introScreen.dart';
 // ignore_for_file: prefer_const_constructors, file_names, prefer_const_literals_to_create_immutables
 
 class SplashScreenPage extends StatefulWidget {
@@ -22,10 +24,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2),
-    () =>
-    Get.to(IntroScreenOne()));
-     
+    Future.delayed(Duration(seconds: 2), () => Get.to(IntroScreen()));
   }
 
   @override

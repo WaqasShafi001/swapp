@@ -18,8 +18,8 @@ class GradientContainer extends StatelessWidget {
             BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  AppColors.linearCian,
-                  AppColors.linearBlue,
+                  AppColors.cianColor,
+                  AppColors.purpleColor,
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
